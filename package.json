@@ -7,11 +7,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "build:cloudflare": "DEPLOY_TARGET=cloudflare astro build",
+    "deploy": "wrangler deploy",
     "preview": "astro preview",
     "check": "astro check"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^13.0.0",
+    "@astrojs/cloudflare": "^14.3.3",
     "@astrojs/node": "^11.1.5",
     "@astrojs/react": "^6.0.5",
     "@astrojs/rss": "^4.0.19",
