@@ -1,0 +1,229 @@
+---
+import FluidInk from "../components/FluidInk.astro";
+import PostCard from "../components/PostCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { INK, SITE } from "../config";
+import { getEmDashCollection, getSiteSettings } from "emdash";
+
+const settings = await getSiteSettings().catch(() => null);
+const siteTitle = settings?.title || SITE.title;
+const tagline = settings?.tagline || SITE.tagline;
+
+// Bind "Da" and "Nang" with a non-breaking space so they never split or stretch apart
+const heroTitle = siteTitle.replace(/Da\s+Nang/i, "Da\u00A0Nang");
+
+let posts: any[] = [];
+try {
+  const result = await getEmDashCollection("posts", {
+    limit: 10,
+    orderBy: { published_at: "desc" },
+  });
+  posts = result.entries || [];
+} catch (e) {
+  console.error("Error fetching posts for index:", e);
+}
+---
+
+<BaseLayout overlayHeader>
+  <FluidInk variant="hero" enabled={INK.hero}>
+    <div class="hero">
+      <p class="hero__eyebrow">
+        <span>〔 沱灢筆記 〕</span>
+        <span class="nowrap">DA&#8201;NANG NOTEBOOK</span>
+        <span class="hero__eyebrow-sep" aria-hidden="true">・</span>
+        <span class="nowrap">TOURIST’S&nbsp;LOG</span>
+      </p>
+      <h1 class="hero__title">EZ <span class="nowrap">Da&#8201;Nang</span></h1>
+      <p class="hero__lede">{tagline}</p>
+      <p class="hero__cta">
+        <a href="/articles/">Read Articles ↓</a>
+      </p>
+    </div>
+
+    <p class="hero__rail tategaki" aria-hidden="true">
+      沱灢 ・ 墨水
+    </p>
+
+    {
+      INK.hero && (
+        <p class="hero__notes" aria-hidden="true">
+          <span>Navier–Stokes ・ WebGL2</span>
+          <span class="hero__notes-mid">Scroll ↓</span>
+          <span>Move ・ Stir the ink</span>
+        </p>
+      )
+    }
+  </FluidInk>
+
+  <section class="section wrap">
+    <div class="latest__head">
+      <h2 class="eyebrow">〔 筆記 〕 Recent Notes</h2>
+      <a class="latest__all label" href="/articles/">All articles ({posts.length}) →</a>
+    </div>
+
+    <div class="latest__list">
+      {posts.length > 0 ? (
+        posts.map((post) => <PostCard post={post} />)
+      ) : (
+        <p class="empty-state">
+          No articles published yet. Open the <a href="/_emdash/admin">CMS Admin</a> to create your first post.
+        </p>
+      )}
+    </div>
+  </section>
+
+  {
+    INK.divider && (
+      <FluidInk variant="divider" strength={INK.strength * 0.7}>
+        <p class="divider__label label">沱灢 ・ 墨と紙 — Ink and paper</p>
+      </FluidInk>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .hero {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+    padding: var(--space-24) var(--gutter);
+    text-align: center;
+  }
+
+  .hero__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-accent);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem 0.5rem;
+  }
+
+  .hero__eyebrow-sep {
+    display: inline;
+  }
+
+  .hero__title {
+    font-family: var(--font-mono);
+    font-size: clamp(3rem, 10.5vw, 8.5rem);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: var(--tracking-hero);
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  .hero__lede {
+    max-width: 32rem;
+    font-size: var(--text-md);
+    color: var(--color-fg-muted);
+  }
+
+  .hero__cta a {
+    display: inline-block;
+    padding: var(--space-3) var(--space-6);
+    border: var(--rule-width) solid var(--color-accent);
+    border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-accent);
+    transition:
+      background var(--duration-fast) var(--ease-out),
+      color var(--duration-fast) var(--ease-out);
+  }
+
+  .hero__cta a:hover {
+    background: var(--color-accent);
+    color: var(--color-accent-fg);
+  }
+
+  .hero__rail {
+    position: absolute;
+    top: 50%;
+    right: var(--gutter);
+    translate: 0 -50%;
+  }
+
+  .hero__notes {
+    display: none;
+    position: absolute;
+    inset-inline: var(--gutter);
+    bottom: var(--space-6);
+    justify-content: space-between;
+    gap: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-fg-faint);
+  }
+
+  :global(.ink:has([data-ink-active])) .hero__notes {
+    display: flex;
+  }
+
+  .latest__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding-bottom: var(--space-6);
+    border-bottom: var(--rule-width) solid var(--color-rule);
+  }
+
+  .latest__all {
+    text-decoration: none;
+  }
+
+  .latest__all:hover {
+    color: var(--color-accent);
+  }
+
+  .latest__list :global(.post-card:last-child) {
+    border-bottom: none;
+  }
+
+  .empty-state {
+    padding: var(--space-12) 0;
+    font-size: var(--text-sm);
+    color: var(--color-fg-muted);
+  }
+
+  .empty-state a {
+    color: var(--color-accent);
+  }
+
+  .divider__label {
+    margin: auto;
+    text-align: center;
+  }
+
+  @media (max-width: 55rem) {
+    .hero__rail,
+    .hero__notes-mid {
+      display: none;
+    }
+  }
+
+  @media (max-width: 40rem) {
+    .hero__eyebrow-sep {
+      display: none;
+    }
+  }
+
+  @media (max-width: 34rem) {
+    :global(.ink:has([data-ink-active])) .hero__notes {
+      display: none;
+    }
+  }
+</style>

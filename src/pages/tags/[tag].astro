@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getEmDashCollection, getTerm } from "emdash";
+
+const { tag } = Astro.params;
+
+if (!tag) {
+  return Astro.redirect("/404");
+}
+
+let term: any = null;
+try {
+  term = await getTerm("tag", tag);
+} catch (e) {
+  // Term not found
+}
+
+let posts: any[] = [];
+try {
+  const result = await getEmDashCollection("posts", {
+    orderBy: { published_at: "desc" },
+    limit: 50,
+  });
+  // Filter by tag if term matching or fallback
+  posts = (result.entries || []).filter((p: any) => {
+    const pTags: string[] = p.taxonomies?.tag || p.data?.tags || [];
+    return pTags.includes(tag) || (term && pTags.includes(term.slug));
+  });
+} catch (e) {
+  console.error(`Error loading posts for tag ${tag}:`, e);
+}
+
+const tagLabel = term?.label || tag;
+---
+
+<BaseLayout
+  title={`#${tagLabel}`}
+  description={`Articles tagged with #${tagLabel}`}
+>
+  <div class="wrap">
+    <PageHeader
+      eyebrow={`〔 分類 〕 #${tagLabel} ・ ${posts.length} ${posts.length === 1 ? 'entry' : 'entries'}`}
+      title={`#${tagLabel}`}
+      lede={`Articles and notes focusing on ${tagLabel}.`}
+    />
+
+    <div class="tag-posts-list">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .tag-posts-list :global(.post-card:last-child) {
+    border-bottom: none;
+  }
+</style>

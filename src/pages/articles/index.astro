@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getEmDashCollection, getTaxonomyTerms } from "emdash";
+
+let posts: any[] = [];
+try {
+  const result = await getEmDashCollection("posts", {
+    limit: 50,
+    orderBy: { published_at: "desc" },
+  });
+  posts = result.entries || [];
+} catch (e) {
+  console.error("Error loading articles archive:", e);
+}
+
+let tags: any[] = [];
+try {
+  tags = await getTaxonomyTerms("tag");
+} catch (e) {
+  // taxonomy not yet initialized
+}
+---
+
+<BaseLayout
+  title="Articles"
+  description="Personal notes and guides on staying in Da Nang, Vietnam."
+>
+  <div class="wrap">
+    <PageHeader
+      eyebrow={`〔 目録 〕 ${posts.length} ${posts.length === 1 ? 'Article' : 'Articles'} ・ 筆記`}
+      title="All Articles"
+      lede="Everything here is based on personal experience as a long-term tourist in Da Nang."
+    />
+
+    {
+      tags && tags.length > 0 && (
+        <div class="tags-filter">
+          <span class="label">〔 分類 〕 Topics:</span>
+          {tags.map((t: any) => (
+            <a class="tag-pill" href={`/tags/${t.slug}/`}>
+              #{t.label || t.slug}
+            </a>
+          ))}
+        </div>
+      )
+    }
+
+    <div class="articles-list">
+      {posts.length > 0 ? (
+        posts.map((post) => <PostCard post={post} />)
+      ) : (
+        <p class="empty-state">
+          No articles published yet. Open the <a href="/_emdash/admin">CMS Admin</a> to create your first article.
+        </p>
+      )}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .tags-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+    padding-bottom: var(--space-8);
+    margin-bottom: var(--space-8);
+    border-bottom: var(--rule-width) solid var(--color-rule);
+  }
+
+  .tag-pill {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: var(--space-1) var(--space-3);
+    border: var(--rule-width) solid var(--color-rule);
+    border-radius: var(--radius);
+    color: var(--color-fg-muted);
+    transition: all var(--duration-fast);
+  }
+
+  .tag-pill:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  .articles-list :global(.post-card:last-child) {
+    border-bottom: none;
+  }
+
+  .empty-state {
+    padding: var(--space-12) 0;
+    font-size: var(--text-sm);
+    color: var(--color-fg-muted);
+  }
+
+  .empty-state a {
+    color: var(--color-accent);
+  }
+</style>

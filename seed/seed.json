@@ -1,0 +1,3311 @@
+{
+	"$schema": "https://emdashcms.com/seed.schema.json",
+	"version": "1",
+	"meta": {
+		"name": "Exported Seed",
+		"description": "Exported from existing EmDash database"
+	},
+	"settings": {
+		"tagline": "A long-term tourist’s log",
+		"title": "EZ Da Nang"
+	},
+	"collections": [
+		{
+			"slug": "pages",
+			"label": "Pages",
+			"labelSingular": "Page",
+			"supports": [
+				"drafts",
+				"revisions",
+				"search"
+			],
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Title",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "content",
+					"label": "Content",
+					"type": "portableText",
+					"searchable": true
+				}
+			]
+		},
+		{
+			"slug": "posts",
+			"label": "Posts",
+			"labelSingular": "Post",
+			"supports": [
+				"drafts",
+				"revisions",
+				"search"
+			],
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Title",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "featured_image",
+					"label": "Featured Image",
+					"type": "image"
+				},
+				{
+					"slug": "content",
+					"label": "Content",
+					"type": "portableText",
+					"searchable": true
+				},
+				{
+					"slug": "excerpt",
+					"label": "Excerpt",
+					"type": "text"
+				}
+			]
+		}
+	],
+	"defaultLocale": "en",
+	"taxonomies": [
+		{
+			"id": "tax:category",
+			"name": "category",
+			"label": "Categories",
+			"labelSingular": "Category",
+			"hierarchical": true,
+			"collections": [
+				"posts"
+			]
+		},
+		{
+			"id": "tax:tag",
+			"name": "tag",
+			"label": "Tags",
+			"labelSingular": "Tag",
+			"hierarchical": false,
+			"collections": [
+				"posts"
+			]
+		}
+	],
+	"menus": [],
+	"widgetAreas": [],
+	"content": {
+		"posts": [
+			{
+				"id": "posts:foreign-food",
+				"slug": "foreign-food",
+				"status": "published",
+				"data": {
+					"title": "Foreign Food in Da Nang",
+					"featured_image": {
+						"src": "/images/articles/foreign-food/hero-xCktyfiPaJ.webp",
+						"alt": "foreign-food"
+					},
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b_1",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_1_1",
+									"text": "Neighborhoods and Hidden Gems",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_2",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_2_1",
+									"text": "When you get tired of rice and noodles and start craving foreign food, Da Nang actually has a massive variety. But before we get into specific places, you need to understand how the city is zoned. Foreign food here isn't scattered randomly; it forms clusters based on where different expat communities live:",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_3",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_3_1",
+									"text": "My An (An Thuong area): This is the main Western expat hub. If you want European, Arabic, Mexican, or Indian food, you head here.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_4",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_4_1",
+									"text": "An Hai (Pham Van Dong area): This is basically Da Nang's \"K-Town.\" If you want authentic Korean BBQ, fried chicken, or Korean supermarkets, this is the area.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_5",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_5_1",
+									"text": "Hai Chau (near Han Market): This is the Japanese quarter. If you are looking for late-night Izakayas, ramen, and sushi, you go here.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_6",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_6_1",
+									"text": "I don't really go to fine-dining places, so my ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_6_3",
+									"text": "list",
+									"marks": [
+										"link_6_2"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_6_4",
+									"text": " is focused on everyday comfort food, reliable spots, and a few hidden gems.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_6_2",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/TZ55H9CeeR5hVQoq5"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_7",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_7_1",
+									"text": "These are places opened by expats or locals who understand exactly what a Western palate is looking for. They use the right ingredients (like real cheese and decent beef) so it actually hits the spot when you are homesick.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_8",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_8_2",
+									"text": "Bravo Pizzeria",
+									"marks": [
+										"link_8_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_8_3",
+									"text": " -  One of my favorite places in Da Nang. The owner learned how to make pizza from an Italian chef, and they have amazing wood-fired oven pizza, the best in town.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_8_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/zEXoMJooTaXDuXRU8"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_9",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_9_2",
+									"text": "Pizza House",
+									"marks": [
+										"link_9_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_9_3",
+									"text": " - despite the name, they also serve good pasta there.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_9_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/EfJvsPw4AgMe2Nji9"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_10",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_10_2",
+									"text": "Fill My Buns",
+									"marks": [
+										"link_10_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_10_3",
+									"text": " - A great spot when you just need a proper, juicy, well-made hamburger. And I love their fusion version with rice bun, hahaha.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_10_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/UKyFjrLuZJgep5vu5"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_11",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_11_2",
+									"text": "Dirty Fingers",
+									"marks": [
+										"link_11_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_11_3",
+									"text": " - A big Tex-Mex and BBQ place. Good for ribs, sausages, and grabbing a heavy, familiar meal.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_11_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/15fd73pdvSMk6qmN7"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_12",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_12_2",
+									"text": "Ann Home Cuisine",
+									"marks": [
+										"link_12_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_12_3",
+									"text": " - A hidden cafe for European food in the corners of Son Tra district.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_12_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/nsp4avxVYENhj89Z8"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_13",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_13_2",
+									"text": "HANNAH Restaurant",
+									"marks": [
+										"link_13_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_13_3",
+									"text": " - A very reliable, affordable spot for eating tasty food. But be careful, portions there are pretty Asian-sized and it's hard to eat more than one dish.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_13_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/GUZEK5eVGnN6h6ts9"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_14",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_14_2",
+									"text": "Puna Specialty Coffee & Eatery",
+									"marks": [
+										"link_14_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_3",
+									"text": ", ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_5",
+									"text": "The Hideout Cafe",
+									"marks": [
+										"link_14_4"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_6",
+									"text": " (paired with ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_8",
+									"text": "Pokeman",
+									"marks": [
+										"link_14_7"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_9",
+									"text": " in the same building) and ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_11",
+									"text": "byC. café and brunch",
+									"marks": [
+										"link_14_10"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_12",
+									"text": " - Perfect for a slow morning when you want a proper Western-style brunch. ",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_14_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/oaU4sWQVNHA3MCfQ9"
+								},
+								{
+									"_key": "link_14_4",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/CjsanRVq1UBuqia67"
+								},
+								{
+									"_key": "link_14_7",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/1xSq4spzQyGhsx8i6"
+								},
+								{
+									"_key": "link_14_10",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/wdk6QKWnRpfW4CcJA"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_15",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_15_2",
+									"text": "Bro's Kafe",
+									"marks": [
+										"link_15_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_15_3",
+									"text": " - An interesting take on Western food from a Vietnamese perspective, like breakfast stuffed in a Banh Mi or a Banavocado sandwich.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_15_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/HdqvHJ7BoXiyrG9a7"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_16",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_16_1",
+									"text": "Pizza 4P's (",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_16_3",
+									"text": "Indochina",
+									"marks": [
+										"link_16_2"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_16_4",
+									"text": " & ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_16_6",
+									"text": "Hoang Van Thu",
+									"marks": [
+										"link_16_5"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_16_7",
+									"text": " branches) - It is usually crowded and you might need a reservation, but the trained staff and interior make you feel like you are not in Vietnam.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_16_2",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/jB9zvNoPj4hnbmcYA"
+								},
+								{
+									"_key": "link_16_5",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/9Bw1M3CkSecpcaKk9"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_17",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_17_2",
+									"text": "McDonald's",
+									"marks": [
+										"link_17_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_17_3",
+									"text": " - Sometimes you just need the absolute baseline of familiar global fast food, and it's also good for getting some food in the middle of the night.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_17_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/wAC72SzPeVKXegvf9"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_18",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_18_1",
+									"text": "Because Da Nang has a massive population of expats from Japan and Korea, the food in their specific neighborhoods is entirely legitimate. They aren't cooking for Western tourists; they are cooking for their own people. If you cross the river into the Japanese quarter, you have some amazing options:",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_19",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_19_2",
+									"text": "Mangetsu Shochu Bar",
+									"marks": [
+										"link_19_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_19_3",
+									"text": " - An authentic Japanese Izakaya. Great atmosphere, excellent drinks, open till 1 AM, perfect for late-night eating.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_19_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/hrsRQeRQ4GjxMUNc6"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_20",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_20_2",
+									"text": "Ramen Yushoken",
+									"marks": [
+										"link_20_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_20_3",
+									"text": " - One of the good ramen spots in the city. Good variety of noodles and broth.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_20_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/ZXio6kHrQXzshL4aA"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_21",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_21_2",
+									"text": "PIG CHAN RAMEN",
+									"marks": [
+										"link_21_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_21_3",
+									"text": " - Our lifesavers that are open until 1 AM, and have good curry, ramen, and rolls. Always going there if working until midnight.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_21_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/k7SBh5RLycdfSsLy7"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_22",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_22_2",
+									"text": "HÓI BÁN SUSHI",
+									"marks": [
+										"link_22_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_22_3",
+									"text": " - A super crowded place where you need to make a reservation to sit. I usually just place an order on Zalo and take the food away. Great gunkan and bento.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_22_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/MyGsSSor7Y3e1zVu8"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_23",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_23_2",
+									"text": "OMORI DON",
+									"marks": [
+										"link_23_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_23_3",
+									"text": " - While Japanese people say they make food in the microwave, I actually love to go there. They are specifically focused on authentic Japanese beef and rice bowls (donburi).",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_23_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/cKeHN2GH6eUBvLyC6"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_24",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_24_1",
+									"text": "This is just my personal list of safe bets. The restaurant scene in Da Nang moves fast, places open, change owners, and close all the time. Don't just rely on my list or TripAdvisor. Go to My An, An Hai, or Hai Chau, walk around the alleys, look at what people are eating, and make up your own mind.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						}
+					],
+					"excerpt": "My personal guide to foreign food in Da Nang. How the city is zoned for expats, plus reliable hidden gems for pizza, burgers, sushi, and late-night ramen."
+				}
+			},
+			{
+				"id": "posts:coffee-places",
+				"slug": "coffee-places",
+				"status": "published",
+				"data": {
+					"title": "Coffee Places in Da Nang",
+					"featured_image": {
+						"src": "/images/articles/coffee-places/hero-VUX3M2Cg4G.webp",
+						"alt": "coffee-places"
+					},
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b_1",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_1_1",
+									"text": "There are 4 types of coffee shops in Vietnam. Quick overview and some reccomendations. ",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_2",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_2_1",
+									"text": "The first type is the regular ones on almost every corner with Vietnamese coffee, based on Robusta brewed in a phin, like cà phê sữa (coffee with condensed milk) or cà phê đá. Usually, it is served cold, with ice. These are local places to socialize; often young people gather there to play cards or mobile games together, while the older generation plays cờ tướng or dominoes, or just chats. In the morning, some people buy bánh mì or bánh bao from peddlers to have breakfast; the coffee shops themselves rarely sell anything except some light snacks or seeds. I don't see a lot of differences between them, and they are used mostly because houses are not suitable for this type of activity. To find one, just walk down the street and you will probably find one or two of them without hassle. I see no point in making a list of them. Well, exept ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_2_3",
+									"text": "Da Nang Backpacking Station",
+									"marks": [
+										"link_2_2"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_2_4",
+									"text": " - hidden place, very friendly owners who also have bike rentals, live music gatherings and other fun activities.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_2_2",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/8Angt2CzvfsuGpXJ9"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_3",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_3_1",
+									"text": "Second type is ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_3_3",
+									"text": "coffeworkings",
+									"marks": [
+										"link_3_2"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_3_4",
+									"text": ". These are usually 24/7 coffee shops with two dedicated zones: one for drinking coffee and socializing, and a second one for quiet work. Students often use them to study or work together. Some places attract foreigners too, because for one drink (around $1.50) you can work there with relatively good Wi-Fi, and some places offer AC. I mostly work at nighttime, so my list mostly contains places where you can work after midnight.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_3_2",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/4DxPL3MtRSVs6YQRA"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_4",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_4_2",
+									"text": "Anytime Coffee",
+									"marks": [
+										"link_4_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_4_3",
+									"text": " and ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_4_5",
+									"text": "Any Coffee & Workstation",
+									"marks": [
+										"link_4_4"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_4_6",
+									"text": " - usually full during the daytime, has plenty of space to work overnight (which suits my lifestyle), has some Arabica coffee options, my favorite spot;",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_4_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/BTZ55a3iqJpiJrJ57"
+								},
+								{
+									"_key": "link_4_4",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/8nGY1uMrZai4aiFD9"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_5",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_5_2",
+									"text": "Big Home",
+									"marks": [
+										"link_5_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_5_3",
+									"text": " - nice and air-conditioned space, also not far away from the touristic area, but serves only Vietnamese-style coffee;",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_5_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/naRg8681KJjbsK8X8"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_6",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_6_2",
+									"text": "Dory coffee & workspace 24/7",
+									"marks": [
+										"link_6_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_6_3",
+									"text": " - my fallback option if the first two are too crowded;",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_6_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/p9MoyaZzn7DpfPsFA"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_7",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_7_2",
+									"text": "Dorm Coffe",
+									"marks": [
+										"link_7_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_7_3",
+									"text": " - has some dedicated cabins where people can even sleep sometimes, while the regular area and space are used for big gatherings and workshops;",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_7_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/dsrmguH384LoM7N27"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_8",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_8_2",
+									"text": "Zone six",
+									"marks": [
+										"link_8_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_8_3",
+									"text": " - chain of student coffee shops with dedicated cabins;",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_8_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/ScroxXQZZsfPvJp7A"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_9",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_9_2",
+									"text": "EZI",
+									"marks": [
+										"link_9_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_9_3",
+									"text": " - chain of coffee shops working from 7 AM till 11:30 PM, has zones for comfortable work too.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_9_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/eA9hRmBR21wjoa3P8"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_10",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_10_2",
+									"text": "E-Space Coffee & Craft Beer",
+									"marks": [
+										"link_10_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_10_3",
+									"text": " - not big place and usually crowded by foreigners, but with normal coffee and even some food, with nice koi pond.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_10_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/GJ7BfXhzzWwQEe8t6"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_11",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_11_2",
+									"text": "Heaven Coffee",
+									"marks": [
+										"link_11_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_11_3",
+									"text": " - nice styled coffee shop, with good AC and also with koi fishes.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_11_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/QbgyDeLs3Y787WSW8"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_12",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_12_1",
+									"text": "Third type is ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_12_3",
+									"text": "specialty coffee",
+									"marks": [
+										"link_12_2"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_12_4",
+									"text": ". Usually they have their own roasters or have connections with good roasting places, serving everything what you expect from coffee shop, and some places have good food.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_12_2",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/6eqPhLVxpqBtAteB6"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_13",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_13_2",
+									"text": "Puna Specialty Coffee & Eatery",
+									"marks": [
+										"link_13_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_13_3",
+									"text": " - Great place to have breakfast, their Bagel toasted is something that you will wake up in mind to. Other food is also delicious. Have a good selection of beans, and they know how to make a tasty coffee; ",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_13_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/Zf8iwhQVWkE2C9t47"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_14",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_14_2",
+									"text": "slowBreeze",
+									"marks": [
+										"link_14_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_3",
+									"text": " - nice place hidden on small streets with good coffee and music. The guys are super friendly, and sometimes they have desserts. If their coffee wasn't good, they would probably fall into the next category—the place is just asking you to take photos of it; ",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_14_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/UBHfZ3hyRj7N5PMY6"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_15",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_15_2",
+									"text": "Lighthouse",
+									"marks": [
+										"link_15_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_15_3",
+									"text": " - working for its name, gathers all digital nomads (well, it feels like it). Last year it was hard to find a seat there because of it. They have really good food and some nice and interesting blends of beans. The dinner area is usually cleared of these workers, so with some luck, you can find a place to sit and taste good food after 6 PM; ",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_15_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/TLxnYnUAZ94cRNWR6"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_16",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_16_2",
+									"text": "A-Kopi coffee",
+									"marks": [
+										"link_16_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_16_3",
+									"text": " - fancy coffee shop on the 3rd floor with their own rooftop. Good selection of beans, and a rare place where you can try a coffee-based cocktail; ",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_16_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/3DYRF5hgdxSkkpnQA"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_17",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_17_2",
+									"text": "dapen.",
+									"marks": [
+										"link_17_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_17_3",
+									"text": " -  another coffee shop hidden in the small streets, with an interesting interior and pineapple cold brew.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_17_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/w1kGh6PD2zdKbDTd9"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_18",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_18_2",
+									"text": "PASSPORT Coffee Roastery",
+									"marks": [
+										"link_18_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_18_3",
+									"text": " - good beans, know how to make a good coffee. Two zones, one with AC and second is classic outdoors small-chairs.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_18_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/kEfBNkfXuZLoTL7V8"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_19",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_19_2",
+									"text": "The Hideout Cafe",
+									"marks": [
+										"link_19_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_19_3",
+									"text": ", and their ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_19_5",
+									"text": "second place",
+									"marks": [
+										"link_19_4"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_19_6",
+									"text": " - good coffee and a varied menu with options to suit a variety of diets.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_19_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/Zyq8UMcKceVHXVHy8"
+								},
+								{
+									"_key": "link_19_4",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/3L37dt8Pmdog7p457"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_20",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_20_1",
+									"text": "  And last type is ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_20_3",
+									"text": "instacoffee",
+									"marks": [
+										"link_20_2"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_20_4",
+									"text": ", (from Instagram, not instant). Places with nice surroundings and interiors, where people come to take photos. Usually, the coffee there is just okay, and it is not suitable for work at all. ",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_20_2",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/XgRrvJaqKvJBcRhA8"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_21",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_21_2",
+									"text": "E'weik",
+									"marks": [
+										"link_21_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_21_3",
+									"text": " - better after sunset, styled like a Middle Ages clay house with open wooden ceilings;",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_21_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/PRkTj2nVmXsXTrYv9"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_22",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_22_2",
+									"text": "Nối - The Cabin",
+									"marks": [
+										"link_22_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_22_3",
+									"text": " - nice place next to the local port, with some garden area, a port view, a rooftop, and a bathtub converted into a chandelier.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_22_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/LeJCfbwcrazq8KL38"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_23",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_23_2",
+									"text": "2AM Coffee",
+									"marks": [
+										"link_23_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_23_3",
+									"text": " - nice pond with fog, usually have seasonal decorations for upcoming holidays to make themed photos.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_23_1",
+									"_type": "link",
+									"href": "https://maps.app.goo.gl/T2DQbR4UuW4QZYSg8"
+								}
+							]
+						}
+					],
+					"excerpt": "A practical guide to Da Nang's coffee culture. The 4 types of cafes you need to know, from 24/7 co-working spaces to specialty Arabica roasters."
+				}
+			},
+			{
+				"id": "posts:shopping",
+				"slug": "shopping",
+				"status": "published",
+				"data": {
+					"title": "Shopping Without Getting Ripped Off",
+					"featured_image": {
+						"src": "/images/articles/shopping/hero-A7dFOy_gZ2.webp",
+						"alt": "shopping"
+					},
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b_1",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_1_1",
+									"text": "(Without Getting Ripped Off)",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_2",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_2_1",
+									"text": "At some point, eating out every day gets old. You’ll want to cook, stock your fridge, or buy a pillow. ",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_3",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_3_1",
+									"text": "Here is how shopping actually works here.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_4",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_4_1",
+									"text": "🛒 Food & Groceries",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_5",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_5_1",
+									"text": "WinMart+ & Bách Hóa XANH - The safe zone. They are on almost every corner, they have actual price tags, and you don't need to speak a word of Vietnamese to buy water or snacks.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_6",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_6_1",
+									"text": "The Expat Heavens (MoonMilk, Joly Mart, Gyomu) - Go here when you need real cheese, Western spices, or imported meats. MoonMilk is great for Western/Aussie stuff, Gyomu is Japanese.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_7",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_7_1",
+									"text": "The Big Hypermarkets (MM Mega Market, GO!, Lotte) - Massive supermarkets for big hauls. They have everything from food to clothes and kitchen appliances.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_8",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_8_1",
+									"text": "Tạp Hóa (Mom-and-pop shops) - Tiny shops in the front rooms of local houses. Good for late-night beer, ice, or light snacks. If you become a regular, they’ll actually stock your favorites just for you.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_9",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_9_1",
+									"text": "The Sidewalk Veggie - Similar to Tạp Hóa but for fruits and vegetables. Perfect if you cook for one. You can literally walk up and buy exactly two eggs, one tomato, and a single onion.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_10",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_10_1",
+									"text": "Traditional Markets (Chợ Hàn or Chợ Cồn) - The final boss. Crowded, zero price tags, and an automatic 100% markup if you look like a foreigner.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_11",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_11_1",
+									"text": "🚬 Smoker’s Tip: Chợ Cồn is one of the only places to find imported cigarettes. Don't go deep inside—just look for the women on tiny plastic chairs near the entrances.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_12",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_12_1",
+									"text": "📱 Buying Household Goods (The Google Maps Hack)",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_13",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_13_1",
+									"text": "Often people asks where to buy a pillow, and people say \"Go to Lotte Mart.\" You don't need to go to an hypermarket for basic stuff.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_14",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_14_1",
+									"text": "Here is the cheat code: Try to search in google maps. If English word doesn't work, translate the item into Vietnamese. If that fails, search the broader category. Need a pillow? Search for a mattress shop (nệm). Obviously, they sell pillows. This takes you straight to local streets with local prices.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_15",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_15_1",
+									"text": "🚨 3. The Tourist Tax & Scams",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_16",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_16_1",
+									"text": "Vietnamese people are generally incredibly honest and helpful. But tourist hubs (like My An) attract people who specifically want to squeeze clueless foreigners. Step out of the bubble.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_17",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_17_1",
+									"text": "The Yoga Mat: 200k VND at a local shop. The exact same mat in My An? 650k VND.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_18",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_18_1",
+									"text": "The Flat Tire: A local mechanic fixes a bike tire for 50k VND. In the tourist zone, they charged my girlfriend 500k VND.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_19",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_19_1",
+									"text": "Bánh Mì in \"I Love Banh Mi\" is 75k, in \"Ba Hưng Bakery\" across the road with the same stuffing is 25k",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_20",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_20_1",
+									"text": "The \"Letter-Mart\" Scams: Be careful at the 24/7 tourist minimarts (A-Mart, E-Mart, Z-Mart, etc.) located near massive hotels. The Vietnamese Dong has a lot of zeros, and some cashiers specifically target foreigners who get confused by the cash. More than once, they have \"forgotten\" to hand me my last banknote or gave me 20k instead of 200k by \"mistake\". Count your zeros.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						}
+					],
+					"excerpt": "A practical guide to grocery and household shopping in Da Nang. From foreigner-friendly supermarkets and MoonMilk to local wet markets and Google Maps hacks."
+				}
+			},
+			{
+				"id": "posts:living-like-a-king",
+				"slug": "living-like-a-king",
+				"status": "published",
+				"data": {
+					"title": "Why a Western Lifestyle Isn't Cheap in Da Nang",
+					"featured_image": {
+						"src": "/images/articles/living-like-a-king/hero-rcU3n7iSJw.webp",
+						"alt": "living-like-a-king"
+					},
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b_1",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_1_1",
+									"text": "There is a specific type of public meltdown you only see from newly arrived foreigners in Da Nang. A guy lands, opens a local Facebook rental group, and realizes that his dream of a fully furnished, air-conditioned, two-bedroom apartment near the beach doesn't exist for $200 a month. When a local realtor tells him the real price is closer to $500, he feels personally scammed.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_2",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_2_1",
+									"text": "I’m not sure who sold the internet this fantasy of ultra-cheap luxury living in Southeast Asia, but the misunderstanding goes much deeper than the price tag. It’s a complete clash of cultures and how we view comfort.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_3",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_3_1",
+									"text": "When Westerners move to Vietnam, we bring our individualism and consumerism in our suitcases. We expect a home to be a private, climate-controlled fortress. But the Vietnamese way of living is entirely different. It is highly collective, deeply practical, and, from a Western perspective, incredibly ascetic.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_4",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_4_1",
+									"text": "The Truth About $200 Apartments in Da Nang",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_5",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_5_1",
+									"text": "You actually can rent an apartment or a small house in Da Nang for $200, but you have to understand who it was built for. For a Vietnamese family, a house isn't a personal sanctuary; it’s a shared utility. It’s common for three generations or five roommates to share a narrow \"tube house.\"",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_6",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_6_1",
+									"text": "If you rent a local budget place, you will quickly notice the differences: the mattresses are often just hard wooden planks covered by a thin bamboo mat (because it’s cooler for the back in the tropical heat). The bathrooms are \"wet rooms\" where the shower nozzle sprays directly over the toilet, and the kitchen might just be a single gas burner on a tiled counter. Locals don't need a giant double-door fridge because they buy fresh meat and vegetables from the outdoor wet market twice a day.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_7",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_7_1",
+									"text": "If you want the Western concept of \"my house is my castle,\" you have to pay the premium to build it or adapt. For example, I wanted things done my way, so I rented an older three-room house with a small inner garden about 15 minutes away from the beach. The rent is $300 a month. But to make it fit my standards, I spent about $1,500 to fix walls, buy furniture, and make it comfortable. I’ve lived here for three years now, and it works. But if you want to just drop your suitcase in a modern, perfectly furnished apartment on day one, you are paying that Western tax.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_8",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_8_1",
+									"text": "The Daily Rhythm: Noise, Naps, and Street Karaoke",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_9",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_9_1",
+									"text": "To really understand why things cost what they do in Vietnam, you have to look at the daily rhythm of the city. We are guests here, and our 9-to-5, indoor-heavy lifestyle completely clashes with their reality.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_10",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_10_1",
+									"text": "The Vietnamese day starts at 5:00 AM. Before the sun is even up, the streets are a buzzing beehive. People are at the beach running or doing group aerobics. They sit on the sidewalk for a quick bowl of mì Quảng while the bánh bao peddlers ride by, blasting recorded sales pitches from loudspeakers on their bikes to feed the early-morning construction workers.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_11",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_11_1",
+									"text": "By 11:00 AM, the tropical heat sets in, and the locals know better than to fight the sun. From 11:00 AM to 2:00 PM, the city effectively shuts down. Shop owners string up hammocks. Even corporate office workers unroll thin foam mats and sleep under their desks. ",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_12",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_12_1",
+									"text": "After the sun goes down, the community gathers at tạp hóa, drinking beer on the sidewalk, leaving their front doors wide open, and blasting karaoke from their living rooms until 11:00 PM.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_13",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_13_1",
+									"text": "I’ll be honest, I still don’t admire the 100-decibel neighborhood karaoke on a Tuesday night, and the bread cart loudspeaker at 6:00 AM still grates on my nerves. It feels strange to me. But I understand it. To them, privacy and quiet aren't luxuries; they are just isolation. Noise is a sign of life. You see it in the traffic, too. Westerners expect strict lanes and individual right-of-way. Here, traffic moves like a school of fish, and honking isn't aggressive, it's just echolocation to let the collective know where you are.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_14",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_14_1",
+									"text": "Food, Coffee, and the Cost of \"Personal Space\"",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_15",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_15_1",
+									"text": "This collective mindset completely changes the concept of dining out. You’ll see foreigners walk into a modern restaurant with beautiful interiors, blasting AC, and dedicated waiters, and they still expect the bill to be $2.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_16",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_16_1",
+									"text": "It doesn’t work like that. If you want to spend $2 on a meal, you have to eat like the locals. That means sitting on a tiny plastic stool at a stainless steel table on the sidewalk. You also have to leave your Western sense of \"personal space\" at the door. If the place is busy, a stranger will sit right next to you at your table for four, not say a word, and start eating. If you want the luxury of \"buying\" a table just for yourself so nobody sits near you, you go to the expensive Western places and pay $10 for a burger.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_17",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_17_1",
+									"text": "The same goes for Da Nang's massive coffee culture. You can get a local Robusta on the street for 80 cents, sitting on a tiny chair and watching the mopeds go by. But if you want a specialty Arabica pour-over in a quiet, air-conditioned cafe with ergonomic chairs where you can open your MacBook and not be disturbed, you’re paying $3 to $5. You aren't just paying for the beans; you are renting the climate control and the personal space.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_18",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_18_1",
+									"text": "Healthcare in Vietnam: Public vs. Private",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_19",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_19_1",
+									"text": "This cultural difference even explains the healthcare system. I hear expats complain that local public hospitals are cheap because they \"aren't clean.\" That’s nonsense, they use sterile instruments and the doctors are highly trained.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_20",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_20_1",
+									"text": "The reason a local hospital is a fraction of the cost of an international clinic is because it is communal. In a local hospital ward, you will not be alone in a silent room. You will be in a room with a dozen other patients, and their relatives will come to visit, bring food, and literally lay a mat on the floor to sleep next to the bed so they can care for their loved ones. That is how care works here, as a family. If you want a private room where you can be completely isolated and have an English-speaking nurse cater to your every need, you go to the private international hospital and pay Western prices.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_21",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_21_1",
+									"text": "The Tropical Reality: Bugs and Electricity Bills",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_22",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_22_1",
+									"text": "Finally, there is nature. We live in the tropics. That means cockroaches, geckos, spiders, rats, and columns of ants that will find a single drop of spilled juice in three seconds. The locals accept this as a normal part of life; a gecko on the wall is just free mosquito control. If you want to live in a sterile bubble where you never see a bug, you have to pay 10 times more to live in a luxury high-rise or a dedicated gated community where they constantly spray chemicals.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_23",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_23_1",
+									"text": "And if you try to fight the climate by running your AC at 21 degrees all day, you are in for a shock. Electricity in Vietnam is not that cheap. Your monthly electricity bill alone will easily equal what you pay for the entire rent.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_24",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_24_1",
+									"text": "The Bottom Line",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_25",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_25_1",
+									"text": "Living cheaply in Da Nang is entirely possible, but only if you actually live like a local. If you want to isolate yourself from the noise, the heat, the bugs, and the community, if you want to buy privacy, 24/7 air conditioning, and guaranteed personal space, you are going to pay exactly the same or even more than what you would pay back home. You just get palm trees outside your window.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						}
+					],
+					"excerpt": "Is Da Nang actually cheap? A realistic look at the hidden costs of comfort, from the 'Western tax' on housing to the reality of tropical humidity and AC bills."
+				}
+			},
+			{
+				"id": "posts:the-digital-survival-kit",
+				"slug": "the-digital-survival-kit",
+				"status": "published",
+				"data": {
+					"title": "The Digital Survival Kit",
+					"featured_image": {
+						"src": "/images/articles/the-digital-survival-kit/hero-PRDIIyd98w.webp",
+						"alt": "the-digital-survival-kit"
+					},
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b_1",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_1_1",
+									"text": "When I first got to Da Nang, I spent way too much time trying to figure out how to get to Ba Na Hills or find a local mover. To save you the headache, here is the list of apps I actually use to keep life comfortable here.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_2",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_2_1",
+									"text": "The Absolute First One: Google Translate",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_3",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_3_1",
+									"text": "Before you download anything else, get ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_3_3",
+									"text": "this",
+									"marks": [
+										"link_3_2"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_3_4",
+									"text": ". Most locals (landlords, delivery guys, the lady at the fruit stall) don't speak much English.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_3_2",
+									"_type": "link",
+									"href": "https://play.google.com/store/apps/details?id=com.google.android.apps.translate"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_4",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_4_1",
+									"text": "Pro Tip: Use the \"Camera\" feature to read menus and the \"Conversation\" mode to talk to your landlord. It’s not perfect, but it’s the only way to get things done.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_5",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_5_1",
+									"text": "1. Getting Around",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_6",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_6_2",
+									"text": "Grab",
+									"marks": [
+										"link_6_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_6_3",
+									"text": ": You already know it, but here it’s a lifestyle. Use it for bikes, cars, and food.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_6_1",
+									"_type": "link",
+									"href": "https://www.grab.com/vn/en/download/"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_7",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_7_2",
+									"text": "Xanh SM",
+									"marks": [
+										"link_7_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_7_3",
+									"text": ": This is the new \"Blue\" electric taxi fleet. The cars are clean, the drivers are polite, and they are quiet. I use this sometimes, but Grab is still my favorite for speed.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_7_1",
+									"_type": "link",
+									"href": "https://xanhsm.onelink.me/3eCA/uwwt5rdt"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_8",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_8_1",
+									"text": "2. Logistics",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_9",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_9_2",
+									"text": "Zalo",
+									"marks": [
+										"link_9_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_9_3",
+									"text": ": If you are in Vietnam, you are on Zalo. It’s the local WhatsApp and every Vietnamese person uses it. This is how you talk to your landlord, the water delivery guy, and the person fixing your AC.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_9_1",
+									"_type": "link",
+									"href": "https://play.google.com/store/apps/details?id=com.zing.zalo"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_10",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_10_2",
+									"text": "My Viettel",
+									"marks": [
+										"link_10_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_10_3",
+									"text": ": If you get a Viettel SIM (which you should), use this to top up your data. It’s way easier than trying to find a convenience store to buy a scratch card.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_10_1",
+									"_type": "link",
+									"href": "https://play.google.com/store/apps/details?id=com.vttm.vietteldiscovery"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_11",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_11_2",
+									"text": "Lalamove",
+									"marks": [
+										"link_11_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_11_3",
+									"text": ": Need to move a suitcase or a piece of furniture? This is like Grab but for trucks and vans. It’s surprisingly cheap and very fast.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_11_1",
+									"_type": "link",
+									"href": "https://lalamove.onelink.me/2vQB/ix6oy34b?ref=referralentry_sidemenu&amp;code=6VjqmaMb&amp;u=1&amp;ic=MzE5MTg0MTA3ODk4ODkwNjQ5NiM3OTk4&amp;fromShare=1"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_12",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_12_1",
+									"text": "3. Housekeeping & Shopping",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_13",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_13_2",
+									"text": "bTaskee",
+									"marks": [
+										"link_13_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_13_3",
+									"text": ": My favorite. It’s basically \"Uber for a comfortable life.\" You can book a lady for 2-3 hours to clean your whole place for about $10. You can also use it to get your AC cleaned (essential every few months) or even hire a nanny (though from what I’ve seen, they can be quite strict!).",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_13_1",
+									"_type": "link",
+									"href": "https://btaskee.app/aRKUKduYuzWuDe"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_14",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_14_2",
+									"text": "Shopee",
+									"marks": [
+										"link_14_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_3",
+									"text": " & ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_5",
+									"text": "Lazada",
+									"marks": [
+										"link_14_4"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_6",
+									"text": ": This is Vietnam's Amazon. If you need a toaster, a specific shampoo, or an HDMI cable, get it here. Shopee usually has more stuff; Lazada is sometimes a bit \"cleaner\" to use.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_14_1",
+									"_type": "link",
+									"href": "https://shopee.vn/web"
+								},
+								{
+									"_key": "link_14_4",
+									"_type": "link",
+									"href": "https://pages.lazada.vn/wow/i/vn/VNCampaign/uu-dai-tren-lazada-app/"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_15",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_15_2",
+									"text": "Facebook",
+									"marks": [
+										"link_15_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_15_3",
+									"text": ": Specifically for \"Marketplace\" and \"Groups.\" Groups like Da Nang Expats and Da Nang Apartments are the best ways to find deals or second-hand bikes.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_15_1",
+									"_type": "link",
+									"href": "https://www.facebook.com/install"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_16",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_16_1",
+									"text": "4. Travel & Booking",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_17",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_17_2",
+									"text": "Agoda",
+									"marks": [
+										"link_17_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_17_3",
+									"text": ": For some reason, Agoda is almost always cheaper than Booking.com in Southeast Asia and has more options. It’s very helpful for finding a hotel for a few days while you are busy looking for a long-term apartment or house.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_17_1",
+									"_type": "link",
+									"href": "https://www.agoda.com/appdownload"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_18",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_18_2",
+									"text": "Klook",
+									"marks": [
+										"link_18_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_18_3",
+									"text": ": Good for booking day trips to Ba Na Hills or Marble Mountain and finding interesting spots nearby without the \"tourist upcharge.\"",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_18_1",
+									"_type": "link",
+									"href": "https://www.klook.com/en-US/tetris/appdownload/default/"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_19",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_19_2",
+									"text": "VeXeRe",
+									"marks": [
+										"link_19_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_19_3",
+									"text": ": The best app for booking sleeper buses or trains to Hoi An, Hue, or Dalat. You get a digital ticket, so there's no need to go to the station early.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_19_1",
+									"_type": "link",
+									"href": "https://play.google.com/store/apps/details?id=com.vexere.vexere"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_20",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_20_1",
+									"text": "5. Money & Crypto",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_21",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_21_2",
+									"text": "Western Union",
+									"marks": [
+										"link_21_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_21_3",
+									"text": ": Still the most reliable way to send yourself cash from a home bank if you lose your credit card or have an emergency.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_21_1",
+									"_type": "link",
+									"href": "https://play.google.com/store/apps/details?id=com.westernunion.track.location.finder.global"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_22",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_22_2",
+									"text": "Bybit",
+									"marks": [
+										"link_22_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_22_3",
+									"text": ": A lot of long-term travelers use Bybit’s P2P (Peer-to-Peer) market to exchange USDT for VND. What’s great is that it integrates with the local QR payment system, so you can actually pay for your coffee or groceries with USDT in a roundabout way.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_22_1",
+									"_type": "link",
+									"href": "https://www.bybit.com/invite?ref=PPPWLNN"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_23",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_23_2",
+									"text": "Pionex",
+									"marks": [
+										"link_23_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_23_3",
+									"text": ": If you're having trouble using a regular debit/credit card, this solution, with simple KYC procedures, allows you to create a card for online services like Google, ChatGPT, CloudFlare, Shein, and more (payments only, topping up is not possible) using cryptocurrency. The virtual card is free, but you'll need to deposit USDT 100 to apply for it.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_23_1",
+									"_type": "link",
+									"href": "https://accounts.pionex.com/en/signUp?r=0WDm3JeMzeu"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_24",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_24_1",
+									"text": "6. Niche but Useful",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_25",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_25_2",
+									"text": "Windy",
+									"marks": [
+										"link_25_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_25_3",
+									"text": ": Crucial during the rainy season. It gives you a live radar so you can see exactly when a storm is going to hit Son Tra.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_25_1",
+									"_type": "link",
+									"href": "https://play.google.com/store/apps/details?id=com.windyty.android"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_26",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_26_2",
+									"text": "Waze",
+									"marks": [
+										"link_26_1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_26_3",
+									"text": ": Actually better than Google Maps for avoiding weird traffic \"surprises\" or random road closures in the city.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_26_1",
+									"_type": "link",
+									"href": "https://play.google.com/store/apps/details?id=com.waze"
+								}
+							]
+						}
+					],
+					"excerpt": "The digital survival kit for Da Nang: essential apps for rides, food, logistics, and money while living in Vietnam as a long-term tourist."
+				}
+			},
+			{
+				"id": "posts:driving-license",
+				"slug": "driving-license",
+				"status": "published",
+				"data": {
+					"title": "Driving License & 50cc Bikes in Vietnam",
+					"featured_image": {
+						"src": "/images/articles/driving-license/hero-yj_Sl2ApD9.webp",
+						"alt": "driving-license"
+					},
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b_1",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_1_1",
+									"text": "It is the most common question in every Vietnam expat group: \"Can I just rent a 50cc bike so I don't have to deal with getting a local driver's license or dealing with the police?\"",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_2",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_2_1",
+									"text": "The short answer is yes, but the question itself is actually technically incorrect. Here is how the law actually works, and why choosing a \"50cc\" bike is usually a terrible idea anyway.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_3",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_3_1",
+									"text": "The Law: Xe Gắn Máy vs. Xe Mô Tô",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_4",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_4_1",
+									"text": "Vietnam rules: Law on Road Traffic Order and Safety No.",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_4_3",
+									"text": " 36/2024/QH15",
+									"marks": [
+										"link_4_2"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_4_4",
+									"text": ". The law makes a very strict, mathematical distinction between a moped and a motorbike:",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_4_2",
+									"_type": "link",
+									"href": "https://thuvienphapluat.vn/van-ban/Giao-thong-Van-tai/Luat-trat-tu-an-toan-giao-thong-duong-bo-2024-so-36-2024-QH15-444251.aspx"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b_5",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_5_1",
+									"text": "Xe gắn máy (Moped): By law, this is a two-wheeled vehicle with an engine capacity of strictly under 50cc. This is why every \"50cc\" scooter you see on the street is actually 49cc on its registration paper. For these, you do not need a driver's license (you just need to be over 16 years old).",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_6",
+							"style": "normal",
+							"listItem": "bullet",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_6_1",
+									"text": "Xe mô tô (Motorbike): This is any vehicle with an engine capacity of 50cc or higher. If a bike is exactly 50.0cc, it is legally a motorbike and requires a valid driver's license.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_7",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_7_1",
+									"text": "The Reality of the 49cc Scooter",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_8",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_8_1",
+									"text": "So, legally, you can drive a 49cc moped without a license. But practically? You really shouldn't.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_9",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_9_1",
+									"text": "First, a 49cc engine is weak. It is fine if you are just driving three blocks to a coffee shop on a perfectly flat road. But cities here are designed around full-powered traffic flows. If you plan to leave the city, explore the countryside, or ride up the Son Tra peninsula, the bike will struggle to do it. You will end up pushing it up the hill or looking for technical service because it refuses to start.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_10",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_10_1",
+									"text": "Second, because these bikes don't require a license, their primary demographic is local 16-year-old high school students.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_11",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_11_1",
+									"text": "Kids drive these bikes exactly how you would expect teenagers to drive them: full throttle at all times (all the 50 km/h they are capable of), carrying three friends, with absolutely zero technical knowledge or mechanical sympathy. They rarely service them (only when they stop working), they never check the oil, and the moment they graduate and get a real license, they sell them off.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_12",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_12_1",
+									"text": "This means that almost every second-hand 49cc bike you rent or buy is in exceptionally bad condition. The variator is usually destroyed, the injection or carburetor system is clogged, the suspension is dead, and the cost of repairs is higher than buying a new one.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_13",
+							"style": "h3",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_13_1",
+									"text": "The Verdict",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_14",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_14_1",
+									"text": "Trying to exploit the \"under 50cc loophole\" to avoid getting a license usually leaves you stranded on the side of the road with a broken, underpowered scooter. Do yourself a favor: listen to my ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_3",
+									"text": "advice",
+									"marks": [
+										"link_14_2"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "s_14_4",
+									"text": " and get a proper international license with a motorcycle endorsement back home, and rent a standard 125cc or 150cc bike. It is safer, more reliable, and actually lets you experience the country.",
+									"marks": []
+								}
+							],
+							"markDefs": [
+								{
+									"_key": "link_14_2",
+									"_type": "link",
+									"href": "https://danang.ezinner.com/articles/best-advice"
+								}
+							]
+						}
+					],
+					"excerpt": "Can you drive a 50cc motorbike in Vietnam without a license? Understanding the traffic laws, mopeds vs. motorbikes, and why it is generally a bad idea."
+				}
+			},
+			{
+				"id": "posts:best-advice",
+				"slug": "best-advice",
+				"status": "published",
+				"data": {
+					"title": "Best Advice",
+					"featured_image": {
+						"src": "/images/articles/best-advice/hero-SwmhFwPbQ6.webp",
+						"alt": "best-advice"
+					},
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b_1",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_1_1",
+									"text": "If I could give just one piece of advice to anyone planning to visit or stay long-term in Vietnam, it would be this: learn how to ride a motorbike before you arrive, and get the proper license.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_2",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_2_1",
+									"text": "Vietnam ranks third in the world for motorbike usage (right behind China and India, but remember those countries have over a billion people each). Absolutely everything in daily life and city infrastructure is tied to the motorbike. By the way, locals just call any two-wheeled motorized vehicle a \"bike\"—whether it’s a basic automatic scooter or a manual sportbike, it’s all just a \"bike.\"",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_3",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_3_1",
+									"text": "You can survive here using cheap Grab taxis or even renting a car, but the cities are simply not designed for cars. There is a severe lack of parking, the massive flow of motorbikes is overwhelming for a car driver, and GPS navigation will constantly struggle to route a car through tiny alleys, making the experience miserable.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_4",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_4_1",
+									"text": "Walking vs. Riding: My ExperienceOn my first visit to Vietnam, I didn't drive. I walked and took Grab taxis everywhere. Honestly? I didn’t like Vietnam much. When you are a pedestrian here, the city feels hostile. You are constantly dealing with the lack of sidewalks, no real crosswalks, and you are right at ground level with the street rats and cockroaches.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_5",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_5_1",
+									"text": "But on my second visit, I rented a motorbike. It changed absolutely everything.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_6",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_6_1",
+									"text": "When you are on a bike, your perspective completely shifts. You don't see the bugs on the street, and the lack of pedestrian crosswalks suddenly doesn't affect you. The chaotic flow of the city finally makes sense. Plus, you unlock a massive level of freedom. You can go to the empty free beaches, head up to the mountain waterfalls, and explore places just outside the city in almost no time.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_7",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_7_1",
+									"text": "I truly only started to love Vietnam when I started to drive.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_8",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_8_1",
+									"text": "Learn the Basics at HomeMy advice is to learn the basics of operating a scooter or motorcycle back in your home country. You will still need to learn the unspoken \"rules\" of Vietnamese traffic when you get here, but if the physical operation of the bike is already muscle memory, adapting will be much easier.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_9",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_9_1",
+									"text": "The Paperwork Reality CheckMore importantly, get your paperwork sorted before you fly. Recently, there have been several fatal crashes involving foreigners, which forced local authorities to crack down hard. Rental shops are now actively checking driver’s licenses, and the traffic police are regularly setting up checkpoints specifically targeting foreigners.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						},
+						{
+							"_type": "block",
+							"_key": "b_10",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s_10_1",
+									"text": "Do not just show up assuming you can rent a bike with a smile and a passport like it's 2015. Get a proper motorcycle license back home, and get an International Driving Permit (IDP). If you have those, you can rent whatever bike you want, anywhere, and you won't have any expensive or stressful problems with the police.",
+									"marks": []
+								}
+							],
+							"markDefs": []
+						}
+					],
+					"excerpt": "The single best advice for expats moving to Vietnam: learn to ride a motorbike. How renting a scooter changes your experience."
+				}
+			}
+		]
+	}
+}

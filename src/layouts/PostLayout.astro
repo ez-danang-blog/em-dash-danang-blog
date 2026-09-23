@@ -1,0 +1,177 @@
+---
+import "../styles/prose.css";
+import BaseLayout from "./BaseLayout.astro";
+import { PortableText, Image } from "emdash/ui";
+import { formatDate, isoDate } from "../utils/date";
+
+interface Props {
+  post: any;
+  previous?: any;
+  next?: any;
+}
+
+const { post, previous, next } = Astro.props;
+const data = post.data || post;
+const title = data.title || "Untitled";
+const excerpt = data.excerpt || "";
+const rawFeatured = data.featured_image;
+let featuredImageUrl = "";
+if (typeof rawFeatured === "string") {
+  if (rawFeatured.startsWith("{")) {
+    try { featuredImageUrl = JSON.parse(rawFeatured).src; } catch (e) {}
+  } else {
+    featuredImageUrl = rawFeatured;
+  }
+} else if (rawFeatured?.src) {
+  featuredImageUrl = rawFeatured.src;
+}
+const content = data.content;
+
+const rawDate = post.publishedAt || data.publishedAt || post.published_at || data.published_at || post.created_at || data.created_at;
+const pubDate = rawDate ? new Date(rawDate) : new Date();
+const tags: string[] = post.taxonomies?.tag || data.tags || [];
+---
+
+<BaseLayout
+  title={title}
+  description={excerpt}
+  ogImage={featuredImageUrl || undefined}
+  article={{
+    publishedTime: isoDate(pubDate),
+    tags,
+  }}
+>
+  <article class="post wrap">
+    <header class="post__header">
+      <p class="post__stamp eyebrow">
+        <time datetime={isoDate(pubDate)}>{formatDate(pubDate)}</time>
+      </p>
+
+      <h1 class="post__title">{title}</h1>
+      {excerpt && <p class="lede post__lede">{excerpt}</p>}
+
+      {
+        tags.length > 0 && (
+          <p class="post__meta label">
+            {tags.map((tag) => (
+              <a class="post__tag" href={`/tags/${tag}/`}>
+                #{tag}
+              </a>
+            ))}
+          </p>
+        )
+      }
+    </header>
+
+    <div class="post__grid">
+      <div class="prose post__body">
+        {content ? <PortableText value={content} /> : <slot />}
+      </div>
+    </div>
+
+    {
+      (previous || next) && (
+        <nav class="post-nav" aria-label="Adjacent articles">
+          {previous && (
+            <a class="post-nav__link post-nav__link--prev" href={`/articles/${previous.slug || previous.id}/`}>
+              <span class="label">← Previous</span>
+              <span class="post-nav__title">{previous.data?.title || previous.title}</span>
+            </a>
+          )}
+          {next && (
+            <a class="post-nav__link post-nav__link--next" href={`/articles/${next.slug || next.id}/`}>
+              <span class="label">Next →</span>
+              <span class="post-nav__title">{next.data?.title || next.title}</span>
+            </a>
+          )}
+        </nav>
+      )
+    }
+  </article>
+</BaseLayout>
+
+<style>
+  .post__header {
+    max-width: var(--width-prose);
+    padding-block: var(--space-12) var(--space-8);
+  }
+
+  .post__title {
+    margin-top: var(--space-4);
+    font-size: var(--text-2xl);
+  }
+
+  .post__lede {
+    margin-top: var(--space-6);
+  }
+
+  .post__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    text-transform: none;
+  }
+
+  .post__tag {
+    text-decoration: none;
+  }
+
+  .post__tag:hover {
+    color: var(--color-accent);
+  }
+
+
+
+  .post__grid {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: var(--space-8);
+    border-top: var(--rule-width) solid var(--color-rule);
+  }
+
+  .post__body {
+    max-width: var(--width-prose);
+    width: 100%;
+  }
+
+  .post-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-16);
+    padding-top: var(--space-8);
+    border-top: var(--rule-width) solid var(--color-rule);
+  }
+
+  .post-nav__link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    text-decoration: none;
+  }
+
+  .post-nav__link--next {
+    grid-column: 2;
+    text-align: right;
+  }
+
+  .post-nav__title {
+    font-size: var(--text-md);
+    color: var(--color-fg);
+  }
+
+  .post-nav__link:hover .post-nav__title {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 40rem) {
+    .post-nav {
+      grid-template-columns: 1fr;
+    }
+    .post-nav__link--next {
+      grid-column: 1;
+      text-align: left;
+    }
+  }
+</style>

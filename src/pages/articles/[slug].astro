@@ -1,0 +1,45 @@
+---
+import PostLayout from "../../layouts/PostLayout.astro";
+import { getEmDashEntry, getEmDashCollection } from "emdash";
+
+const { slug } = Astro.params;
+
+if (!slug) {
+  return Astro.redirect("/404");
+}
+
+let post: any = null;
+try {
+  const result = await getEmDashEntry("posts", slug);
+  post = result?.entry;
+} catch (e) {
+  console.error(`Error loading article ${slug}:`, e);
+}
+
+if (!post) {
+  return new Response("Not found", { status: 404 });
+}
+
+// Fetch all posts to determine previous/next
+let previous: any = null;
+let next: any = null;
+
+try {
+  const { entries } = await getEmDashCollection("posts", {
+    orderBy: { published_at: "desc" },
+  });
+  const currentIndex = entries.findIndex(
+    (e: any) => (e.slug || e.id) === (post.slug || post.id)
+  );
+  if (currentIndex > 0) {
+    next = entries[currentIndex - 1]; // newer
+  }
+  if (currentIndex >= 0 && currentIndex < entries.length - 1) {
+    previous = entries[currentIndex + 1]; // older
+  }
+} catch (e) {
+  // Ignore navigation errors
+}
+---
+
+<PostLayout post={post} previous={previous} next={next} />

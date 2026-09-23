@@ -1,0 +1,120 @@
+---
+import { BLOG } from "../config";
+import { formatDateStamp, isoDate } from "../utils/date";
+
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+const title = post.data?.title || post.title || "Untitled";
+const description = post.data?.excerpt || post.excerpt || "";
+const rawDate = post.publishedAt || post.data?.publishedAt || post.data?.published_at || post.published_at;
+const pubDate = rawDate ? new Date(rawDate) : new Date();
+const slug = post.slug || post.id;
+const tags: string[] = post.taxonomies?.tag || post.data?.tags || [];
+---
+
+<article class="post-card">
+  <p class="post-card__stamp label">
+    <time datetime={isoDate(pubDate)}>{formatDateStamp(pubDate)}</time>
+    {post.status === "draft" && <span class="post-card__draft">Draft</span>}
+  </p>
+
+  <div class="post-card__body">
+    <h3 class="post-card__title">
+      <a href={`/articles/${slug}/`}>{title}</a>
+    </h3>
+
+    {description && <p class="post-card__description">{description}</p>}
+
+    {
+      tags.length > 0 && (
+        <p class="post-card__meta label">
+          {tags.map((tag) => (
+            <a class="post-card__tag" href={`/tags/${tag}/`}>
+              #{tag}
+            </a>
+          ))}
+        </p>
+      )
+    }
+  </div>
+</article>
+
+<style>
+  .post-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: var(--space-6);
+    padding: var(--space-8) 0;
+    border-bottom: var(--rule-width) solid var(--color-rule);
+    transition: background var(--duration-fast) var(--ease-out);
+  }
+
+  .post-card:hover {
+    background: var(--color-bg-subtle);
+  }
+
+  .post-card__stamp {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding-top: 0.35rem;
+  }
+
+  .post-card__draft {
+    color: var(--color-accent);
+  }
+
+  .post-card__title {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  /* Stretch the title link over the whole row so the entire card is clickable */
+  .post-card__title a {
+    text-decoration: none;
+  }
+
+  .post-card__title a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  .post-card__description {
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--color-fg-muted);
+  }
+
+  .post-card__meta {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+    color: var(--color-fg-faint);
+  }
+
+  .post-card__tag {
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .post-card__tag:hover {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 40rem) {
+    .post-card {
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+    }
+  }
+</style>

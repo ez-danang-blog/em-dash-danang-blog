@@ -1,0 +1,41 @@
+{
+  "name": "danang-blog",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:cloudflare": "DEPLOY_TARGET=cloudflare astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^13.0.0",
+    "@astrojs/node": "^11.1.5",
+    "@astrojs/react": "^6.0.5",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
+    "@emdash-cms/cloudflare": "0.39.1",
+    "@emdash-cms/plugin-types": "0.4.0",
+    "astro": "^7.3.2",
+    "emdash": "0.39.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^22.13.0",
+    "typescript": "^5.8.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "workerd",
+      "better-sqlite3",
+      "sharp",
+      "@img/sharp-win32-x64",
+      "@cloudflare/workerd-windows-64"
+    ]
+  }
+}
