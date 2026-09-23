@@ -6,12 +6,17 @@ import emdash, { local } from "emdash/astro";
 import { sqlite } from "emdash/db";
 import { d1, r2 } from "@emdash-cms/cloudflare";
 
-const isCloudflare = process.env.DEPLOY_TARGET === "cloudflare" || process.env.CF_PAGES === "1";
+const isCloudflare =
+  process.env.DEPLOY_TARGET === "cloudflare" ||
+  process.env.CF_PAGES === "1" ||
+  Boolean(process.env.CI);
 
 export default defineConfig({
   site: "https://danang.ezinner.com",
   output: "server",
-  adapter: isCloudflare ? cloudflare() : node({ mode: "standalone" }),
+  adapter: isCloudflare
+    ? cloudflare({ prerenderEnvironment: "node" })
+    : node({ mode: "standalone" }),
   image: {
     layout: "constrained",
     responsiveStyles: true,

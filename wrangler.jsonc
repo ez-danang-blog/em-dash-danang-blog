@@ -1,20 +1,21 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "danang-blog",
+  "name": "em-dash-danang-blog",
+  "main": "@astrojs/cloudflare/entrypoints/server",
   "compatibility_date": "2026-02-24",
   "compatibility_flags": ["nodejs_compat"],
   "assets": { "directory": "./dist" },
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "danang-blog-db",
-      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+      "database_name": "em-dash-danang-blog-db",
+      "database_id": "07d74376-0d07-4610-80fd-ceca4552f782"
     }
   ],
   "r2_buckets": [
     {
       "binding": "MEDIA",
-      "bucket_name": "danang-blog-media"
+      "bucket_name": "em-dash-danang-blog-media"
     }
   ]
 }
