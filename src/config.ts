@@ -32,6 +32,7 @@ export const NAV: NavItem[] = [
 
 export const SOCIAL: SocialLink[] = [
   { label: "Website", href: "https://www.ezinner.com/" },
+  { label: "Buy Me a Coffee", href: "https://buymeacoffee.com/evgeniizinner" },
 ];
 
 export const BLOG = {
