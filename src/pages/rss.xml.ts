@@ -20,7 +20,8 @@ export const GET: APIRoute = async (context) => {
     description: SITE.description,
     site: context.site || SITE.url,
     items: posts.map((post) => {
-      const pubDate = post.data?.published_at || post.published_at || post.data?.created_at || new Date();
+      const pubDate =
+        post.data?.published_at || post.published_at || post.data?.created_at || new Date();
       return {
         title: post.data?.title || post.title || "Untitled",
         description: post.data?.excerpt || post.excerpt || "",

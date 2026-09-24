@@ -1,4 +1,4 @@
-import { getCollection, type CollectionEntry } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 export type Post = CollectionEntry<"blog">;
 
@@ -30,9 +30,7 @@ export async function getPublishedPosts(): Promise<Post[]> {
     import.meta.env.PROD ? !data.draft : true,
   );
 
-  return posts.sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-  );
+  return posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 }
 
 export function collectTags(posts: Post[]): TagCount[] {
@@ -51,9 +49,7 @@ export function collectTags(posts: Post[]): TagCount[] {
     }
   }
 
-  return [...byslug.values()].sort(
-    (a, b) => b.count - a.count || a.name.localeCompare(b.name),
-  );
+  return [...byslug.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 }
 
 export function postsByTag(posts: Post[], slug: string): Post[] {
@@ -64,10 +60,7 @@ export function postsByTag(posts: Post[], slug: string): Post[] {
  * Neighbouring posts in publication order. `previous` is the older post, which
  * is what a reader working backwards through an archive expects.
  */
-export function getAdjacentPosts(
-  posts: Post[],
-  id: string,
-): { previous?: Post; next?: Post } {
+export function getAdjacentPosts(posts: Post[], id: string): { previous?: Post; next?: Post } {
   const index = posts.findIndex((post) => post.id === id);
   if (index === -1) return {};
 

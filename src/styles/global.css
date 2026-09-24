@@ -95,7 +95,8 @@ a {
   text-decoration-color: var(--color-rule-strong);
   text-underline-offset: 0.22em;
   text-decoration-thickness: 1px;
-  transition: color var(--duration-fast) var(--ease-out),
+  transition:
+    color var(--duration-fast) var(--ease-out),
     text-decoration-color var(--duration-fast) var(--ease-out);
 }
 

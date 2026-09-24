@@ -8,9 +8,7 @@ interface Props {
 }
 
 // h1 is the article title, and anything below h3 is too granular to help.
-const items = Astro.props.headings.filter(
-  (heading) => heading.depth >= 2 && heading.depth <= 3,
-);
+const items = Astro.props.headings.filter((heading) => heading.depth >= 2 && heading.depth <= 3);
 
 const show = BLOG.showTableOfContents && items.length >= BLOG.tocMinHeadings;
 ---

@@ -1,8 +1,8 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getEmDashCollection, getTaxonomyTerms } from "emdash";
 import PageHeader from "../../components/PageHeader.astro";
 import PostCard from "../../components/PostCard.astro";
-import { getEmDashCollection, getTaxonomyTerms } from "emdash";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 let posts: any[] = [];
 try {

@@ -4,8 +4,7 @@
   if (!button) return;
 
   const media = window.matchMedia("(prefers-color-scheme: dark)");
-  const resolve = () =>
-    root.dataset.theme || (media.matches ? "dark" : "light");
+  const resolve = () => root.dataset.theme || (media.matches ? "dark" : "light");
 
   const syncLabel = () => {
     const next = resolve() === "dark" ? "light" : "dark";
@@ -17,9 +16,7 @@
 
     let pinned = document.querySelector('meta[name="theme-color"]:not([media])');
     if (!pinned) {
-      for (const meta of document.querySelectorAll(
-        'meta[name="theme-color"][media]',
-      )) {
+      for (const meta of document.querySelectorAll('meta[name="theme-color"][media]')) {
         meta.remove();
       }
       pinned = document.createElement("meta");

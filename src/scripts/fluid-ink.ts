@@ -102,8 +102,7 @@ class FluidInk extends HTMLElement {
     // that dominates LCP, so wait for the page to settle first — the static
     // gradient underneath is already painted.
     // Safari only shipped requestIdleCallback recently; fall back to a timer.
-    const idle: typeof window.requestIdleCallback | undefined =
-      window.requestIdleCallback;
+    const idle: typeof window.requestIdleCallback | undefined = window.requestIdleCallback;
 
     if (idle) {
       this.idle = true;
@@ -175,11 +174,7 @@ class FluidInk extends HTMLElement {
     // ---- gl plumbing ---------------------------------------------------
     const quad = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, quad);
-    gl.bufferData(
-      gl.ARRAY_BUFFER,
-      new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]),
-      gl.STATIC_DRAW,
-    );
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
 
     const compile = (source: string, type: number): WebGLShader => {
       const shader = gl.createShader(type)!;
@@ -240,27 +235,11 @@ class FluidInk extends HTMLElement {
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
       // Half float: a dye field does not need full precision, and this halves
       // the bandwidth.
-      gl.texImage2D(
-        gl.TEXTURE_2D,
-        0,
-        gl.RGBA16F,
-        width,
-        height,
-        0,
-        gl.RGBA,
-        gl.HALF_FLOAT,
-        null,
-      );
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA16F, width, height, 0, gl.RGBA, gl.HALF_FLOAT, null);
 
       const framebuffer = gl.createFramebuffer()!;
       gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
-      gl.framebufferTexture2D(
-        gl.FRAMEBUFFER,
-        gl.COLOR_ATTACHMENT0,
-        gl.TEXTURE_2D,
-        texture,
-        0,
-      );
+      gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, texture, 0);
       gl.clearColor(0, 0, 0, 1);
       gl.clear(gl.COLOR_BUFFER_BIT);
 
@@ -332,13 +311,8 @@ class FluidInk extends HTMLElement {
     const autoFlow = this.dataset.auto !== "0";
     const queue: Splat[] = [];
 
-    const enqueue = (
-      x: number,
-      y: number,
-      dx: number,
-      dy: number,
-      amount: number,
-    ) => queue.push({ x, y, dx, dy, amount });
+    const enqueue = (x: number, y: number, dx: number, dy: number, amount: number) =>
+      queue.push({ x, y, dx, dy, amount });
 
     const applySplat = (splat: Splat) => {
       const program = programs.splat;
@@ -485,20 +459,12 @@ class FluidInk extends HTMLElement {
       // Vorticity confinement — a coarse grid bleeds angular momentum, so put
       // some back.
       programs.curl.use();
-      gl.uniform2f(
-        programs.curl.uniform("uTexel"),
-        velocity.texel[0],
-        velocity.texel[1],
-      );
+      gl.uniform2f(programs.curl.uniform("uTexel"), velocity.texel[0], velocity.texel[1]);
       gl.uniform1i(programs.curl.uniform("uVel"), velocity.read.attach(0));
       blit(curl);
 
       programs.vorticity.use();
-      gl.uniform2f(
-        programs.vorticity.uniform("uTexel"),
-        velocity.texel[0],
-        velocity.texel[1],
-      );
+      gl.uniform2f(programs.vorticity.uniform("uTexel"), velocity.texel[0], velocity.texel[1]);
       gl.uniform1i(programs.vorticity.uniform("uVel"), velocity.read.attach(0));
       gl.uniform1i(programs.vorticity.uniform("uCurl"), curl.attach(1));
       gl.uniform1f(programs.vorticity.uniform("uDt"), dt);
@@ -507,22 +473,14 @@ class FluidInk extends HTMLElement {
       velocity.swap();
 
       programs.divergence.use();
-      gl.uniform2f(
-        programs.divergence.uniform("uTexel"),
-        velocity.texel[0],
-        velocity.texel[1],
-      );
+      gl.uniform2f(programs.divergence.uniform("uTexel"), velocity.texel[0], velocity.texel[1]);
       gl.uniform1i(programs.divergence.uniform("uVel"), velocity.read.attach(0));
       blit(divergence);
 
       // Jacobi solve. 22 iterations is where ink stops looking like gas and
       // more stops being visible.
       programs.pressure.use();
-      gl.uniform2f(
-        programs.pressure.uniform("uTexel"),
-        velocity.texel[0],
-        velocity.texel[1],
-      );
+      gl.uniform2f(programs.pressure.uniform("uTexel"), velocity.texel[0], velocity.texel[1]);
       gl.uniform1i(programs.pressure.uniform("uDiv"), divergence.attach(1));
       for (let i = 0; i < 22; i++) {
         gl.uniform1i(programs.pressure.uniform("uPre"), pressure.read.attach(0));
@@ -531,22 +489,14 @@ class FluidInk extends HTMLElement {
       }
 
       programs.gradient.use();
-      gl.uniform2f(
-        programs.gradient.uniform("uTexel"),
-        velocity.texel[0],
-        velocity.texel[1],
-      );
+      gl.uniform2f(programs.gradient.uniform("uTexel"), velocity.texel[0], velocity.texel[1]);
       gl.uniform1i(programs.gradient.uniform("uPre"), pressure.read.attach(0));
       gl.uniform1i(programs.gradient.uniform("uVel"), velocity.read.attach(1));
       blit(velocity.write);
       velocity.swap();
 
       programs.advect.use();
-      gl.uniform2f(
-        programs.advect.uniform("uTexel"),
-        velocity.texel[0],
-        velocity.texel[1],
-      );
+      gl.uniform2f(programs.advect.uniform("uTexel"), velocity.texel[0], velocity.texel[1]);
       gl.uniform1f(programs.advect.uniform("uDt"), dt * 60);
       gl.uniform1f(programs.advect.uniform("uDiss"), 0.999);
       gl.uniform1i(programs.advect.uniform("uVel"), velocity.read.attach(0));
@@ -562,19 +512,11 @@ class FluidInk extends HTMLElement {
 
       programs.display.use();
       gl.uniform1i(programs.display.uniform("uDye"), dye.read.attach(0));
-      gl.uniform3f(
-        programs.display.uniform("uBg"),
-        background[0],
-        background[1],
-        background[2],
-      );
+      gl.uniform3f(programs.display.uniform("uBg"), background[0], background[1], background[2]);
       gl.uniform1f(programs.display.uniform("uBlend"), blend);
       // Paper takes a much lighter vignette than a black page.
       gl.uniform1f(programs.display.uniform("uVignette"), blend < 0 ? 0.12 : 0.5);
-      gl.uniform1f(
-        programs.display.uniform("uDither"),
-        blend < 0 ? 0.5 / 255 : 1 / 255,
-      );
+      gl.uniform1f(programs.display.uniform("uDither"), blend < 0 ? 0.5 / 255 : 1 / 255);
       blit(null);
     };
 

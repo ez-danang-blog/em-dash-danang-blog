@@ -1,10 +1,10 @@
-import { defineConfig } from "astro/config";
-import node from "@astrojs/node";
 import cloudflare from "@astrojs/cloudflare";
+import node from "@astrojs/node";
 import react from "@astrojs/react";
+import { d1, r2 } from "@emdash-cms/cloudflare";
+import { defineConfig } from "astro/config";
 import emdash, { local } from "emdash/astro";
 import { sqlite } from "emdash/db";
-import { d1, r2 } from "@emdash-cms/cloudflare";
 
 const isCloudflare =
   process.env.DEPLOY_TARGET === "cloudflare" ||

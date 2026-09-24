@@ -17,15 +17,12 @@ export const onRequest = defineMiddleware(async (context, next) => {
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
 
   // 4. Strict Transport Security (HSTS): 1 year + subdomains
-  response.headers.set(
-    "Strict-Transport-Security",
-    "max-age=31536000; includeSubDomains"
-  );
+  response.headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
 
   // 5. Restrict Sensitive Device APIs
   response.headers.set(
     "Permissions-Policy",
-    "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    "camera=(), microphone=(), geolocation=(), browsing-topics=()",
   );
 
   // 6. Cross-Origin Window Isolation

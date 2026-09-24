@@ -29,7 +29,7 @@
             }
           }
         },
-        { threshold: 0.1 }
+        { threshold: 0.1 },
       );
 
       // Create an invisible sentinel at 70% of article or near footer
@@ -38,7 +38,7 @@
       sentinel.style.width = "100%";
       sentinel.style.pointerEvents = "none";
       sentinel.setAttribute("aria-hidden", "true");
-      
+
       // Place sentinel towards the end of article content
       article.appendChild(sentinel);
       observer.observe(sentinel);
@@ -53,7 +53,7 @@
             showPrompt();
           }
         },
-        { passive: true }
+        { passive: true },
       );
     }
   }

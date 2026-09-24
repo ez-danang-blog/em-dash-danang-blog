@@ -19,7 +19,7 @@ export const GET: APIRoute = async () => {
   let tags: any[] = [];
   try {
     tags = await getTaxonomyTerms("tag");
-  } catch (e) {
+  } catch {
     // tags empty or not initialized
   }
 
@@ -56,7 +56,7 @@ ${allUrls
     ${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ""}
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority}</priority>
-  </url>`
+  </url>`,
   )
   .join("\n")}
 </urlset>`;

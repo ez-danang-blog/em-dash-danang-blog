@@ -9,7 +9,8 @@ interface Props {
 const { post } = Astro.props;
 const title = post.data?.title || post.title || "Untitled";
 const description = post.data?.excerpt || post.excerpt || "";
-const rawDate = post.publishedAt || post.data?.publishedAt || post.data?.published_at || post.published_at;
+const rawDate =
+  post.publishedAt || post.data?.publishedAt || post.data?.published_at || post.published_at;
 const pubDate = rawDate ? new Date(rawDate) : new Date();
 const slug = post.slug || post.id;
 const tags: string[] = post.taxonomies?.tag || post.data?.tags || [];

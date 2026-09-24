@@ -1,6 +1,6 @@
 ---
+import { getEmDashCollection, getEmDashEntry } from "emdash";
 import PostLayout from "../../layouts/PostLayout.astro";
-import { getEmDashEntry, getEmDashCollection } from "emdash";
 
 const { slug } = Astro.params;
 
@@ -28,9 +28,7 @@ try {
   const { entries } = await getEmDashCollection("posts", {
     orderBy: { published_at: "desc" },
   });
-  const currentIndex = entries.findIndex(
-    (e: any) => (e.slug || e.id) === (post.slug || post.id)
-  );
+  const currentIndex = entries.findIndex((e: any) => (e.slug || e.id) === (post.slug || post.id));
   if (currentIndex > 0) {
     next = entries[currentIndex - 1]; // newer
   }

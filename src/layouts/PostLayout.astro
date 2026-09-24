@@ -1,8 +1,8 @@
 ---
 import "../styles/prose.css";
-import BaseLayout from "./BaseLayout.astro";
-import { PortableText, Image } from "emdash/ui";
+import { Image, PortableText } from "emdash/ui";
 import { formatDate, isoDate } from "../utils/date";
+import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
   post: any;
@@ -18,7 +18,9 @@ const rawFeatured = data.featured_image;
 let featuredImageUrl = "";
 if (typeof rawFeatured === "string") {
   if (rawFeatured.startsWith("{")) {
-    try { featuredImageUrl = JSON.parse(rawFeatured).src; } catch (e) {}
+    try {
+      featuredImageUrl = JSON.parse(rawFeatured).src;
+    } catch (e) {}
   } else {
     featuredImageUrl = rawFeatured;
   }
@@ -27,7 +29,13 @@ if (typeof rawFeatured === "string") {
 }
 const content = data.content;
 
-const rawDate = post.publishedAt || data.publishedAt || post.published_at || data.published_at || post.created_at || data.created_at;
+const rawDate =
+  post.publishedAt ||
+  data.publishedAt ||
+  post.published_at ||
+  data.published_at ||
+  post.created_at ||
+  data.created_at;
 const pubDate = rawDate ? new Date(rawDate) : new Date();
 const tags: string[] = post.taxonomies?.tag || data.tags || [];
 ---

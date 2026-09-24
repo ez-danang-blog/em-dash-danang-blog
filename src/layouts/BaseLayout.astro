@@ -2,12 +2,12 @@
 import "../styles/fonts.css";
 import "../styles/global.css";
 
+import { getSiteSettings } from "emdash";
 import BaseHead, { type ArticleMeta } from "../components/BaseHead.astro";
+import CoffeeWidget from "../components/CoffeeWidget.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import CoffeeWidget from "../components/CoffeeWidget.astro";
 import { SITE } from "../config";
-import { getSiteSettings } from "emdash";
 
 interface Props {
   title?: string;
@@ -29,9 +29,7 @@ const settings = await getSiteSettings().catch(() => null);
 const siteTitle = settings?.title || SITE.title;
 const tagline = settings?.tagline || SITE.tagline;
 
-const pageTitle = title
-  ? `${title} — ${siteTitle}`
-  : `${siteTitle} — ${tagline}`;
+const pageTitle = title ? `${title} — ${siteTitle}` : `${siteTitle} — ${tagline}`;
 ---
 
 <!doctype html>

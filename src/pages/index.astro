@@ -1,9 +1,9 @@
 ---
+import { getEmDashCollection, getSiteSettings } from "emdash";
 import FluidInk from "../components/FluidInk.astro";
 import PostCard from "../components/PostCard.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
 import { INK, SITE } from "../config";
-import { getEmDashCollection, getSiteSettings } from "emdash";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const settings = await getSiteSettings().catch(() => null);
 const siteTitle = settings?.title || SITE.title;

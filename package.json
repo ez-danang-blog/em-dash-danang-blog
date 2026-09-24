@@ -9,7 +9,10 @@
     "build:cloudflare": "DEPLOY_TARGET=cloudflare astro build",
     "deploy": "wrangler deploy",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "check:biome": "biome check --write ."
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.3",
@@ -26,6 +29,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@biomejs/biome": "2.5.14",
     "@types/node": "^22.13.0",
     "typescript": "^5.8.0",
     "wrangler": "^4.136.3"

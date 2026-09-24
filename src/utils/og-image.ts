@@ -39,14 +39,12 @@ interface OgOptions {
 }
 
 /** satori takes a React-shaped tree; these keep the literals readable. */
-const node = (
-  type: string,
-  style: Record<string, unknown>,
-  children?: unknown,
-) => ({ type, props: { style, children } });
+const node = (type: string, style: Record<string, unknown>, children?: unknown) => ({
+  type,
+  props: { style, children },
+});
 
-const text = (value: string, style: Record<string, unknown>) =>
-  node("div", style, value);
+const text = (value: string, style: Record<string, unknown>) => node("div", style, value);
 
 export async function renderOgImage(options: OgOptions): Promise<Buffer> {
   const { title, stamp, tags = [] } = options;
