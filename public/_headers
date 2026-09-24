@@ -1,0 +1,22 @@
+# Baseline Cybersecurity Headers (Mozilla HTTP Observatory A+)
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), browsing-topics=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+# Static fonts: immutable caching
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# Static images: 1 day with 7 day stale-while-revalidate
+/images/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+# Client script assets: immutable caching
+/scripts/*
+  Cache-Control: public, max-age=31536000, immutable

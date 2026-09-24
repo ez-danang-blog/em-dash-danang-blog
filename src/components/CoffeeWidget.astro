@@ -1,0 +1,207 @@
+---
+// Pure CSS & SVG Buy Me a Coffee widget: zero cookies, zero external scripts, Sumi ink-and-paper aesthetic
+const bmcUrl = "https://buymeacoffee.com/evgeniizinner";
+---
+
+<div id="coffee-widget" class="coffee-widget">
+  {/* Reminder Speech Bubble triggered when reader reaches the end */}
+  <div id="coffee-widget-bubble" class="coffee-bubble hidden" role="dialog" aria-label="Support reminder">
+    <a href={bmcUrl} target="_blank" rel="noopener noreferrer" class="coffee-bubble__content">
+      <svg class="coffee-bubble__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+        <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+        <line x1="6" y1="2" x2="6" y2="4"></line>
+        <line x1="10" y1="2" x2="10" y2="4"></line>
+        <line x1="14" y1="2" x2="14" y2="4"></line>
+      </svg>
+      <div class="coffee-bubble__text">
+        <span class="coffee-bubble__headline">Enjoyed these notes?</span>
+        <span class="coffee-bubble__sub">Support this blog with a coffee</span>
+      </div>
+    </a>
+    <button id="coffee-widget-close" class="coffee-bubble__close" type="button" aria-label="Dismiss reminder">
+      &times;
+    </button>
+  </div>
+
+  {/* Main Floating Coffee Button */}
+  <a
+    href={bmcUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="coffee-btn"
+    aria-label="Buy me a coffee"
+  >
+    <svg class="coffee-btn__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+      <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+      <line x1="6" y1="2" x2="6" y2="4"></line>
+      <line x1="10" y1="2" x2="10" y2="4"></line>
+      <line x1="14" y1="2" x2="14" y2="4"></line>
+    </svg>
+    <span class="coffee-btn__label">Buy me a coffee</span>
+  </a>
+</div>
+
+<script is:inline src="/scripts/coffee-widget.js" defer></script>
+
+<style>
+  .coffee-widget {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.65rem;
+    pointer-events: none;
+  }
+
+  .coffee-widget > * {
+    pointer-events: auto;
+  }
+
+  /* Main Button: ink-on-washi styling */
+  .coffee-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-bg-raised);
+    color: var(--color-fg);
+    border: 1px solid var(--color-rule-strong);
+    border-radius: 9999px;
+    padding: 0.45rem 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.725rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .coffee-btn:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .coffee-btn:active {
+    transform: translateY(0);
+  }
+
+  .coffee-btn__icon {
+    display: block;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .coffee-btn:hover .coffee-btn__icon {
+    transform: scale(1.1);
+  }
+
+  /* Speech Bubble: Sumi card style */
+  .coffee-bubble {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--color-bg-raised);
+    color: var(--color-fg);
+    border: 1px solid var(--color-rule-strong);
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    max-width: 280px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .coffee-bubble.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .coffee-bubble.hidden {
+    display: none;
+  }
+
+  .coffee-bubble__content {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    color: inherit;
+    flex: 1;
+  }
+
+  .coffee-bubble__icon {
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .coffee-bubble__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .coffee-bubble__headline {
+    font-family: var(--font-serif);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--color-fg);
+  }
+
+  .coffee-bubble__sub {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--color-fg-muted);
+    text-transform: uppercase;
+  }
+
+  .coffee-bubble__content:hover .coffee-bubble__headline {
+    color: var(--color-accent);
+  }
+
+  .coffee-bubble__close {
+    background: none;
+    border: none;
+    color: var(--color-fg-faint);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.15rem 0.3rem;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+  }
+
+  .coffee-bubble__close:hover {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 32rem) {
+    .coffee-widget {
+      bottom: 1rem;
+      right: 1rem;
+    }
+
+    .coffee-btn__label {
+      display: none;
+    }
+
+    .coffee-btn {
+      padding: 0.55rem;
+      border-radius: 50%;
+    }
+
+    .coffee-bubble {
+      max-width: 240px;
+    }
+  }
+</style>

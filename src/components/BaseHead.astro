@@ -95,19 +95,12 @@ const breadcrumbs = article
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 
-{/* Pin the stored theme before first paint. Without a stored choice the
-    document keeps `color-scheme: light dark` and follows the OS. */}
-<script is:inline>
-  try {
-    const stored = localStorage.getItem("sumi-theme");
-    if (stored === "light" || stored === "dark") {
-      document.documentElement.dataset.theme = stored;
-    }
-  } catch {}
-</script>
+{/* Pin the stored theme before first paint. */}
+<script is:inline src="/scripts/theme-init.js"></script>
 
 <title>{title}</title>
 <meta name="description" content={description} />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
 <link rel="canonical" href={canonical} />
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
