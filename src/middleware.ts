@@ -1,8 +1,5 @@
 import { defineMiddleware } from "astro:middleware";
 
-// Cloudflare Email Protection inline script hash (per Mozilla Observatory A+ standard)
-const CF_EMAIL_DECODE_HASH = "'sha256-zZG66hYaIE7jakN3/b+tJgshBrGJl9R8csrzNZUciow='";
-
 export const onRequest = defineMiddleware(async (context, next) => {
   const response = await next();
   const pathname = context.url.pathname;
@@ -36,16 +33,17 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return response;
   }
 
-  // 8. Content Security Policy (Strict, zero unsafe-inline in scripts, default-src 'none')
+  // 8. Content Security Policy (Allows Cloudflare edge challenge/bot protection & scripts)
   const cspDirectives = [
     "default-src 'none'",
-    `script-src 'self' ${CF_EMAIL_DECODE_HASH}`,
+    "script-src 'self' 'unsafe-inline' https:",
     "object-src 'none'",
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: https: blob:",
     "font-src 'self'",
-    "connect-src 'self'",
-    "frame-src 'none'",
+    "connect-src 'self' https:",
+    "frame-src 'self' https:",
+    "child-src 'self' blob:",
     "worker-src 'self' blob:",
     "frame-ancestors 'none'",
     "base-uri 'self'",
