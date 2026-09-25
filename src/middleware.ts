@@ -53,5 +53,26 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   response.headers.set("Content-Security-Policy", cspDirectives.join("; "));
 
+  // 9. Edge Caching for Anonymous Public GET Requests
+  // Allows Cloudflare to cache rendered HTML at edge data centers worldwide,
+  // reducing TTFB from 500ms+ down to ~15ms while keeping editor sessions private.
+  if (
+    context.request.method === "GET" &&
+    !pathname.startsWith("/_emdash") &&
+    !context.url.searchParams.has("_preview") &&
+    !context.cookies.has("emdash-edit-mode") &&
+    !context.cookies.has("emdash-session") &&
+    !response.headers.has("Cache-Control")
+  ) {
+    response.headers.set(
+      "Cache-Control",
+      "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
+    );
+    response.headers.set(
+      "Cloudflare-CDN-Cache-Control",
+      "max-age=3600, stale-while-revalidate=86400",
+    );
+  }
+
   return response;
 });

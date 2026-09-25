@@ -102,13 +102,21 @@ class FluidInk extends HTMLElement {
     // that dominates LCP, so wait for the page to settle first — the static
     // gradient underneath is already painted.
     // Safari only shipped requestIdleCallback recently; fall back to a timer.
-    const idle: typeof window.requestIdleCallback | undefined = window.requestIdleCallback;
+    const scheduleBoot = () => {
+      const idle: typeof window.requestIdleCallback | undefined = window.requestIdleCallback;
 
-    if (idle) {
-      this.idle = true;
-      this.startHandle = idle(() => this.boot(), { timeout: 1500 });
+      if (idle) {
+        this.idle = true;
+        this.startHandle = idle(() => this.boot(), { timeout: 4000 });
+      } else {
+        this.startHandle = window.setTimeout(() => this.boot(), 1000);
+      }
+    };
+
+    if (document.readyState === "complete") {
+      scheduleBoot();
     } else {
-      this.startHandle = window.setTimeout(() => this.boot(), 250);
+      window.addEventListener("load", scheduleBoot, { once: true });
     }
   }
 
