@@ -21,10 +21,6 @@ export default defineConfig({
     layout: "constrained",
     responsiveStyles: true,
   },
-  prefetch: {
-    prefetchAll: true,
-    defaultStrategy: "hover",
-  },
   integrations: [
     react(),
     emdash({
