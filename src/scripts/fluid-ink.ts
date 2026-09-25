@@ -97,6 +97,11 @@ class FluidInk extends HTMLElement {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reducedMotion.matches) return;
 
+    // Skip heavy WebGL fluid simulation on mobile/touch screens:
+    // the static CSS gradient is visually identical, zero CPU/battery drain, zero TBT.
+    const isMobile = window.matchMedia("(pointer: coarse), (max-width: 768px)");
+    if (isMobile.matches) return;
+
     // Creating the context and compiling nine shader programs is a few hundred
     // milliseconds of main-thread work on a slow device. On the critical path
     // that dominates LCP, so wait for the page to settle first — the static

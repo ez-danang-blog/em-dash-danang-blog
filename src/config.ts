@@ -46,9 +46,9 @@ export const BLOG = {
 
 export const INK = {
   hero: true,
-  divider: true,
+  divider: false,
   strength: 1,
-  autoFlow: true,
+  autoFlow: false,
 } as const;
 
 export const OG = {
